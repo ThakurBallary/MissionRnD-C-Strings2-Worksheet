@@ -17,15 +17,15 @@ Objectives of C-Strings-2 Lesson:
 int main(){
 	
 	//Test Consonants_Vowels
-	char str[] = "a";
-	int consonants;
-	int vowels;
-	count_vowels_and_consonants(str, &consonants, &vowels);
-	printf("\n");
+	
 	//Test getFrequencyofWord
+	char str[] = "abababa";
+	char word[] = "ab";
+	int count = count_word_in_str_way_1(str, word);
+	printf("%d", count);
 
 	//Test getSubstring
-
+	
 	//Test getLastWord
 
 	return 0;
