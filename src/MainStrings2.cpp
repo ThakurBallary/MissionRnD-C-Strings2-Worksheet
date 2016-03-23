@@ -19,11 +19,7 @@ int main(){
 	//Test Consonants_Vowels
 	
 	//Test getFrequencyofWord
-	char str[] = "abababa";
-	char word[] = "ab";
-	int count = count_word_in_str_way_1(str, word);
-	printf("%d", count);
-
+	
 	//Test getSubstring
 	
 	//Test getLastWord

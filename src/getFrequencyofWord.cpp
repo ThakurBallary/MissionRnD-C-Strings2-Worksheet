@@ -12,33 +12,32 @@ Note: Dont modify original str or word,Just return count ,Spaces can also be par
 
 #include <stdlib.h>
 
-int isWordExist(char *str, char *word) {
-	int i = 0, j = 0;
-	while (str[i] != NULL && word[j] != NULL) {
-		if (str[i] == word[j]) {
-			j++;
-		}
-		else {
-			j = 0;
-		}
-		i++;
-	}
-	if (word[j] == NULL) {
-		return 1;
-	}
-	return 0;
-}
-
 int count_word_in_str_way_1(char *str, char *word){
 	if (!str || !word) {
 		return 0;
 	}
-	int i = 0, count = 0;
+	int i = 0, j = 0, count = 0, t;
+
 	while (str[i] != NULL) {
-		if (isWordExist(&str[i], word)) {
-			count++;
+		// check characters
+		while (str[i] != NULL && word[j] != NULL && str[i] == word[j] ) {
+			t = i++;
+			j++;
 		}
-		i++;
+		// word occured
+		if (word[j] == NULL) {
+			count++;
+			if (j != 1) {
+				i = t;
+			}
+			j = 0;
+		}
+		else {
+			i++;
+		}
+	}
+	if (word[j] == NULL) {
+		count++;
 	}
 	return count;
 }
